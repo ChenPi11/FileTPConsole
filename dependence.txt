@@ -1,0 +1,7 @@
+Dependence(需要的依赖)
+1 qrcode
+2 Pillow
+3 rich
+
+Fast install(全部安装命令)
+$ pip3 install qrcode Pillow rich
