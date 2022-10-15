@@ -23,8 +23,9 @@ FileTP:/>exit
 # 
 ```
 [![Bugs](https://img.shields.io/github/issues/ChenPi11/FileTPConsole)](https://github.com/ChenPi11/FileTPConsole/issues) [![Bugs](https://img.shields.io/bitbucket/issues/ChenPi11/FileTPConsole?label=bugs&logo=python)](https://github.com/ChenPi11/FileTPConsole/issues/1) 
-##### Support OS(支持的平台)
+### Support OS(支持的平台)
 [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://1919810.com) [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.bilibili.com/video/BV1GJ411x7h7/?spm_id_from=333.337.search-card.all.click)
-##### Infomations(信息)
+### Infomations(信息)
 [Main Pages(主页)](https://github.com/ChenPi11/FileTPConsole/blob/web-pages/index.md)
+
 [Dependence(依赖库)](https://raw.githubusercontent.com/ChenPi11/FileTPConsole/web-pages/dependence.txt)
