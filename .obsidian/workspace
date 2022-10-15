@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "test.md",
+            "file": "README.md",
             "mode": "source",
             "source": false
           }
@@ -57,8 +57,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "test.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "test.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test.md"
+                "file": "README.md"
               }
             }
           }
@@ -131,6 +130,7 @@
   },
   "active": "3b86480855ca6d24",
   "lastOpenFiles": [
+    "test.md",
     "vim/vim90/vim16x16.gif"
   ]
 }
