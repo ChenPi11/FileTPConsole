@@ -43,7 +43,7 @@ def getext(file:str):
         return ""
 def la(path:str,d:DirTree):# like omz la
     if(path=="/"):
-        if(len(d.root.children)==0 and len(d.root.value)):
+        if(len(d.root.children)==0 and len(d.root.value)==0):
             print('\x1b[%sm%s\x1b[0m' % (';'.join([str(colors["lightgray"]),"3","1","2"]), strings.app.nofiles))
             return
         for i in d.root.children:

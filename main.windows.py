@@ -354,8 +354,10 @@ class ClientCmd(Cmd):
             printcolor(colors["red"],getexc())
     def do_bind(self,arg):
         if(_connected(self.c)):
-            print(strings.app.messages.helps.connect)
+            print(strings.app.messages.connected)
             return
+        print("test,arg=",arg)
+        self._make_qrcode(arg)
     def do_close(self,arg):
         try:
             if(not _connected(self.c)):
