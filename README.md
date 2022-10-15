@@ -1,2 +1,2 @@
 # FileTP Console
-[![Bugs](https://img.shields.io/github/issues/microsoft/vscode/bug.svg)](javascript:alert("We don't have web pages. :()"))
+[![Bugs]([issues: 1 open (shields.io)](https://img.shields.io/github/issues/ChenPi11/FileTPConsole)](https://github.com/ChenPi11/FileTPConsole/issues/1)
