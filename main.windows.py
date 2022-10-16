@@ -8,11 +8,6 @@ args = parser.parse_args()
 print('------args---------',args)
 '''
 import platform
-__last_cp=65001
-if(platform.uname()[0]=="Windows"):
-    import ctypes
-    __last_cp=ctypes.windll.kernel32.GetConsoleCP()
-    ctypes.windll.kernel32.SetConsoleCP(65001)
 from cmd import Cmd
 import os
 import sys
@@ -25,8 +20,6 @@ from filetp_consoleui import *
 def exit():
     #do exit command
     print("\n"+strings.app.terminate)
-    if(platform.uname()[0]=="Windows"):
-        ctypes.windll.kernel32.SetConsoleCP(__last_cp)
 
 def countdir(path):
     file_count = 0
@@ -137,6 +130,7 @@ class ClientCmd(Cmd):
         im.close()
     def do_test(self,arg):
         print("do_test() called                 [  OK  ]")
+        print(platform.uname())
     log=getLogger("CMD")
     prompt = strings.app.pro
     intro = strings.app.intro
