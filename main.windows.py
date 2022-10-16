@@ -8,8 +8,9 @@ args = parser.parse_args()
 print('------args---------',args)
 '''
 import platform
+import ctypes
 from cmd import Cmd
-import os
+from subprocess import *
 import sys
 import glob
 import qrcode
@@ -17,10 +18,21 @@ from filetp.filetp import *
 from filetp_color import *
 from filetp_commands import *
 from filetp_consoleui import *
+import os
+try:#可能是不必要的
+    nullio=open(os.devnull,"w+")
+except:
+    nullio=open("null.tmp","w+")
+if(platform.uname()[0]=="Windows"):
+    cp=ctypes.windll.kernel32.GetConsoleCP()
+    path=os.path.join(os.getenv("SystemRoot"),"System32","chcp.com")#%SystemRoot%\System32\chcp.com
+    p=Popen([path,str(cp)],shell=True,stdout=sys.stdout,stderr=nullio,cwd=os.getcwd())#重新加载codepage
+    p.wait()
+    
 def exit():
     #do exit command
     print("\n"+strings.app.terminate)
-
+    Log.info("----------FileTP App Close:time:"+str(time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime()))+"----------")
 def countdir(path):
     file_count = 0
     for dirpath, dirnames, filenames in os.walk(path):
@@ -130,7 +142,8 @@ class ClientCmd(Cmd):
         im.close()
     def do_test(self,arg):
         print("do_test() called                 [  OK  ]")
-        print(platform.uname())
+        self.c.sk.recvs("build")
+        
     log=getLogger("CMD")
     prompt = strings.app.pro
     intro = strings.app.intro
@@ -419,12 +432,25 @@ class ClientCmd(Cmd):
         pass
 def main(args):
     try:
+        try:
+            Log.info("----------FileTP "+main_thread().name+" Start: argv="+str(sys.argv)+
+                     ",cwd="+str(os.getcwd())+
+                     ",mainthread_ident="+str(main_thread().ident)+
+                     ",pid:"+str(os.getpid())+
+                     ",time="+str(time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime()))+
+                     "----------"
+                     )
+        except:
+            pass
         clientcmd=ClientCmd()
         clientcmd.chdirupdate()
         clientcmd.cmdloop()
     except:
         print("\n"+strings.app.error.fatalmsg.replace("{msg}",getexc()))
+        Log.fatal("----------UNHANDLED EXCEPTION!!!!!!!----------")
         Log.printerror()
+        
+        exit()
         sys.exit(-1)
 if(__name__=="__main__"):
     main(sys.argv)

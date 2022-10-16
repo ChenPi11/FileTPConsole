@@ -1,2 +1,534 @@
-[INFO SYSTEM 6425127] Add dir:E:\
-[INFO SYSTEM 14747865] Chdir:E@mnt
+[INFO SOCKET2 573403] Connected:('localhost', 15803),fd=588
+[INFO FILETP 573403] Connected to localhost:15803
+[INFO FILETP 581269] dir .\IMAGES exists
+[INFO FILETP 581269] dir .\IMAGES\Linux exists
+[INFO FILETP 582271] dir .\IMAGES\Linux\archlinux安装 exists
+[INFO FILETP 582271] dir .\IMAGES\MacOS-MK-unlocker exists
+[INFO FILETP 582271] dir .\IMAGES\MacOS-MK-unlocker\backup exists
+[INFO FILETP 582271] dir .\IMAGES\MacOS-MK-unlocker\backup\x64 exists
+[INFO FILETP 582271] dir .\IMAGES\MacOS-MK-unlocker\backup_old exists
+[INFO FILETP 582271] dir .\IMAGES\MacOS-MK-unlocker\backup_old\x64 exists
+[INFO FILETP 583280] dir .\IMAGES\MacOS-MK-unlocker\tools exists
+[INFO FILETP 583280] dir .\IMAGES\WindowsNT exists
+[INFO SOCKET2 584268] File already exists:.\IMAGES\CentOS-7-x86_64-Everything-2009.iso
+[INFO SOCKET2 585269] Open file:.\IMAGES\CentOS-7-x86_64-Everything-2009 (1).iso
+[INFO SOCKET2 585269] Reday to recvfile:.\IMAGES\CentOS-7-x86_64-Everything-2009 (1).iso,size=10200547328,relp=IMAGES\CentOS-7-x86_64-Everything-2009.iso
+[==========] 100% 10200547328/10200547328[==========] 100% 10200547328/10200547328
+[SUC SOCKET2 19257763] Recvfile success:.\IMAGES\CentOS-7-x86_64-Everything-2009 (1).iso
+
+[INFO SOCKET2 19258830] Open file:.\IMAGES\kali-linux-2022.2-installer-amd64.iso
+[INFO SOCKET2 19258830] Reday to recvfile:.\IMAGES\kali-linux-2022.2-installer-amd64.iso,size=2944139264,relp=IMAGES\kali-linux-2022.2-installer-amd64.iso
+[==========] 100% 2944139264/2944139264[==========] 100% 2944139264/2944139264
+[SUC SOCKET2 41342413] Recvfile success:.\IMAGES\kali-linux-2022.2-installer-amd64.iso
+
+[INFO SOCKET2 41342413] Open file:.\IMAGES\CentOS-8.5.2111-x86_64-dvd1 (1).iso
+[INFO SOCKET2 41344366] Reday to recvfile:.\IMAGES\CentOS-8.5.2111-x86_64-dvd1 (1).iso,size=5264900096,relp=IMAGES\CentOS-8.5.2111-x86_64-dvd1 (1).iso
+[==========] 100% 5264900096/5264900096[==========] 100% 5264900096/5264900096
+[SUC SOCKET2 52325148] Recvfile success:.\IMAGES\CentOS-8.5.2111-x86_64-dvd1 (1).iso
+
+[INFO SOCKET2 52325148] Open file:.\IMAGES\android-x86_64-9.0-r2 (1).iso
+[INFO SOCKET2 52326148] Reday to recvfile:.\IMAGES\android-x86_64-9.0-r2 (1).iso,size=965738496,relp=IMAGES\android-x86_64-9.0-r2 (1).iso
+[==========] 100% 965738496/965738496[==========] 100% 965738496/965738496
+[SUC SOCKET2 54267447] Recvfile success:.\IMAGES\android-x86_64-9.0-r2 (1).iso
+
+[INFO SOCKET2 54268362] Open file:.\IMAGES\Windows98SEcnyb_itmop.com.iso
+[INFO SOCKET2 54268362] Reday to recvfile:.\IMAGES\Windows98SEcnyb_itmop.com.iso,size=322275328,relp=IMAGES\Windows98SEcnyb_itmop.com.iso
+[==========] 100% 322275328/322275328[==========] 100% 322275328/322275328
+[SUC SOCKET2 54697451] Recvfile success:.\IMAGES\Windows98SEcnyb_itmop.com.iso
+
+[INFO SOCKET2 54698412] Open file:.\IMAGES\archlinux-2022.10.01-x86_64 (1).iso
+[INFO SOCKET2 54698412] Reday to recvfile:.\IMAGES\archlinux-2022.10.01-x86_64 (1).iso,size=837103616,relp=IMAGES\archlinux-2022.10.01-x86_64 (1).iso
+[==========] 100% 837103616/837103616[==========] 100% 837103616/837103616
+[SUC SOCKET2 61573601] Recvfile success:.\IMAGES\archlinux-2022.10.01-x86_64 (1).iso
+
+[INFO SOCKET2 61574602] Open file:.\IMAGES\ubuntu-20.04.4-live-server-amd64.iso
+[INFO SOCKET2 61575612] Reday to recvfile:.\IMAGES\ubuntu-20.04.4-live-server-amd64.iso,size=1331691520,relp=IMAGES\ubuntu-20.04.4-live-server-amd64.iso
+[==========] 100% 1331691520/1331691520[==========] 100% 1331691520/1331691520
+[SUC SOCKET2 75726569] Recvfile success:.\IMAGES\ubuntu-20.04.4-live-server-amd64.iso
+
+[INFO SOCKET2 75727569] Open file:.\IMAGES\ubuntu-20.04.4-live-server-amd64 (1).iso
+[INFO SOCKET2 75727569] Reday to recvfile:.\IMAGES\ubuntu-20.04.4-live-server-amd64 (1).iso,size=1331691520,relp=IMAGES\ubuntu-20.04.4-live-server-amd64 (1).iso
+[==========] 100% 1331691520/1331691520[==========] 100% 1331691520/1331691520
+[SUC SOCKET2 78039192] Recvfile success:.\IMAGES\ubuntu-20.04.4-live-server-amd64 (1).iso
+
+[INFO SOCKET2 78041095] Open file:.\IMAGES\Win8.1_SingleLang_Chinese(Simplified)_x32 (1).iso
+[INFO SOCKET2 78041095] Reday to recvfile:.\IMAGES\Win8.1_SingleLang_Chinese(Simplified)_x32 (1).iso,size=3259715584,relp=IMAGES\Win8.1_SingleLang_Chinese(Simplified)_x32 (1).iso
+[==========] 100% 3259715584/3259715584[==========] 100% 3259715584/3259715584
+[SUC SOCKET2 85509412] Recvfile success:.\IMAGES\Win8.1_SingleLang_Chinese(Simplified)_x32 (1).iso
+
+[INFO SOCKET2 85511414] Open file:.\IMAGES\macOS Big Sur 11.2.3 (20D91) (1).iso
+[INFO SOCKET2 85561279] Reday to recvfile:.\IMAGES\macOS Big Sur 11.2.3 (20D91) (1).iso,size=13958643712,relp=IMAGES\macOS Big Sur 11.2.3 (20D91) (1).iso
+[==========] 100% 13958643712/13958643712[==========] 100% 13958643712/13958643712
+[SUC SOCKET2 180241119] Recvfile success:.\IMAGES\macOS Big Sur 11.2.3 (20D91) (1).iso
+
+[INFO SOCKET2 180242127] Open file:.\IMAGES\android-x86_64-9.0-r2.iso
+[INFO SOCKET2 180243144] Reday to recvfile:.\IMAGES\android-x86_64-9.0-r2.iso,size=965738496,relp=IMAGES\android-x86_64-9.0-r2.iso
+[==========] 100% 965738496/965738496[==========] 100% 965738496/965738496
+[SUC SOCKET2 190070137] Recvfile success:.\IMAGES\android-x86_64-9.0-r2.iso
+
+[INFO SOCKET2 190070137] Open file:.\IMAGES\windows_nt.iso
+[INFO SOCKET2 190071134] Reday to recvfile:.\IMAGES\windows_nt.iso,size=676548608,relp=IMAGES\windows_nt.iso
+[==========] 100% 676548608/676548608[==========] 100% 676548608/676548608
+[SUC SOCKET2 197581708] Recvfile success:.\IMAGES\windows_nt.iso
+
+[INFO SOCKET2 197582690] Open file:.\IMAGES\ubuntu-20.04.4-desktop-amd64.iso
+[INFO SOCKET2 197582690] Reday to recvfile:.\IMAGES\ubuntu-20.04.4-desktop-amd64.iso,size=3379068928,relp=IMAGES\ubuntu-20.04.4-desktop-amd64.iso
+[==========] 100% 3379068928/3379068928[==========] 100% 3379068928/3379068928
+[SUC SOCKET2 228748284] Recvfile success:.\IMAGES\ubuntu-20.04.4-desktop-amd64.iso
+
+[INFO SOCKET2 228749234] Open file:.\IMAGES\ms-dos_7.10.iso
+[INFO SOCKET2 228750335] Reday to recvfile:.\IMAGES\ms-dos_7.10.iso,size=9455616,relp=IMAGES\ms-dos_7.10.iso
+[==========] 100% 9455616/9455616[==========] 100% 9455616/9455616
+[SUC SOCKET2 228822150] Recvfile success:.\IMAGES\ms-dos_7.10.iso
+
+[INFO SOCKET2 228823154] Open file:.\IMAGES\macOS Big Sur 11.2.3 (20D91).iso
+[INFO SOCKET2 228870441] Reday to recvfile:.\IMAGES\macOS Big Sur 11.2.3 (20D91).iso,size=13958643712,relp=IMAGES\macOS Big Sur 11.2.3 (20D91).iso
+[FAIL SOCKET2 323080329] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 374, in recvfile
+    sksend(self.sk,_Socket2Commands.ok)#send ok
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[          ] -% 9219080192/13958643712
+[ERROR FILETP 323130486] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 224, in recvs
+    self.sk.recvfile(path)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 386, in recvfile
+    sksend(self.sk,_Socket2Commands.err)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+[ERROR FILETP 323180739] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323181180] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323181599] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323182633] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323182633] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323183611] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323183611] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323183611] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323184609] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323184609] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323184609] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323185609] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323185609] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323185609] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323185609] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323185609] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323186650] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323186650] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323186650] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323186650] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323187608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323187608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323187608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323187608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323188608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323188608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323188608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323188608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323188608] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323189638] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323189638] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323189638] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323189638] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323190607] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[ERROR FILETP 323191606] Traceback(catch):
+  File "E:\Apps\FileTPConsole\filetp\filetp.py", line 223, in recvs
+    self.sk.sk.send(_FileTPCommand.ok)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 34, in send
+    sksend(self,data)
+  File "E:\Apps\FileTPConsole\filetp\socket2.py", line 87, in sksend
+    l=sk.__send__(dt)
+OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。
+[SUC FILETP 323191606] Recv files suc:69,55 errors

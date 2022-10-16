@@ -43,7 +43,7 @@ functions respectively.
 """
 
 import string, sys
-
+from filetp.log import *
 __all__ = ["Cmd"]
 
 PROMPT = '(Cmd) '
@@ -72,6 +72,7 @@ class Cmd:
     undoc_header = "Undocumented commands:"
     nohelp = "*** No help on %s"
     use_rawinput = 1
+    log = None
 
     def __init__(self, completekey='tab', stdin=None, stdout=None):
         """Instantiate a line-oriented interpreter framework.
@@ -135,6 +136,7 @@ class Cmd:
                                 line = 'EOF'
                             else:
                                 line = line.rstrip('\r\n')
+                    self.log.info("Execute:"+line)
                     line = self.precmd(line)
                     stop = self.onecmd(line)
                     stop = self.postcmd(stop, line)

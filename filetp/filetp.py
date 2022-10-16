@@ -238,7 +238,7 @@ class FileTP:
         self.closed=True
         self.sk.close()
 
-if(__name__=="__main__"):
+def filetp_test():
     TEST_IP="localhost"
     def _FileTP_srv_main():
         debugmode()
@@ -264,5 +264,8 @@ if(__name__=="__main__"):
         else:
             _FileTP_cli_main()
     else:
-        os.system("start "+sys.argv[0]+" -___test-___srv")
+        os.system("start py -m filetp.filetp"+" -___test-___srv ; pause")
         _FileTP_cli_main()
+
+if(__name__=="__main__"):
+    filetp_test()

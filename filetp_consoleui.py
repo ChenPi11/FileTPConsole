@@ -66,3 +66,9 @@ def la(path:str,d:DirTree):# like omz la
             else:
                 printcolor(co.colors["white"],lang2icon[ext2lang[getext(str(i))]]+" "+str(i))
 
+if(__name__=="__main__"):
+    
+    l=LoadingBar()
+    Thread(target=l.start,daemon=True).start()
+    time.sleep(3)
+    l.stop()
