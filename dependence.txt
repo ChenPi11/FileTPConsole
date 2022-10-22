@@ -5,3 +5,5 @@ Dependence(需要的依赖)
 
 Fast install(全部安装命令)
 $ pip3 install qrcode Pillow rich
+Windows(Windows用户需要运行):
+> pip install windows-curses 
