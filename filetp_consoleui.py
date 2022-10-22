@@ -66,9 +66,32 @@ def la(path:str,d:DirTree):# like omz la
             else:
                 printcolor(co.colors["white"],lang2icon[ext2lang[getext(str(i))]]+" "+str(i))
 
-if(__name__=="__main__"):
+class ConsoleUI:
+    title=""
+    def __init__(self):
+        pass
+    def init(self):
+        self.update()
+    def update(self):
+        print("\x1b[44m",end="")
+        console.control(Control.home())
+        print((" "*int(console.size[0]/2-len(self.title)/2)+self.title),flush=True)
+        print(" "*console.size[0]*(console.size[1]-1),end="",flush=True)
+        console.control(Control.home())
+        print("")
+    def settitle(self,t:str):
+        self.title=t
+        console.set_window_title(t)
+        print("\033[s\033[0;0H",end="",flush=True)
+        print((" "*int(console.size[0]/2-len(t)/2))+t," "*(console.size[0]-int(console.size[0]/2-len(t)/2)),sep="",flush=True)
+        print("\033[u",end="",flush=True)
+    def end(self):
+        print("\x1b[0m",end="")
+        console.clear()
+            
     
-    l=LoadingBar()
-    Thread(target=l.start,daemon=True).start()
-    time.sleep(3)
-    l.stop()
+
+if(__name__=="__main__"):
+    c=ConsoleUI()
+    c.init()
+    c.end()

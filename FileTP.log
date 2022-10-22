@@ -1,0 +1,8 @@
+[37m[INFO SYSTEM 160989] ----------FileTP Setting MainThread Start: argv=['E:\\Apps\\FileTPConsole\\main.configure.py'],cwd=E:\Apps\FileTPConsole,mainthread_ident=21264,pid:19544,time=2022-10-22 05:54:59----------[0m
+[43;1m[FATAL SYSTEM 367985] ----------UNHANDLED EXCEPTION!!!!!!!----------[0m
+[31m[ERROR SYSTEM 367985] Traceback(catch):
+  File "E:\Apps\FileTPConsole\main.configure.py", line 33, in <module>
+    main()
+  File "E:\Apps\FileTPConsole\main.configure.py", line 27, in main
+    time.sleep(1)
+KeyboardInterrupt: [0m

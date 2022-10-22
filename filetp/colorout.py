@@ -1,9 +1,13 @@
 from .config import *
-import ctypes,platform,signal
+import ctypes,platform,signal,os
 STD_OUTPUT_HANDLE=    -11
 nullfun = lambda *args: None
 def _(n,msg,flush=False,end="\n",file=sys.stderr,*a,**kw):
     print(msg,flush=flush,end=end,file=file)
+def has_color():
+    no_color=False
+    no_color=(no_color if no_color is not None else "NO_COLOR" in os.environ)
+    return not no_color
 initdt=[0,_,nullfun]#handle,colorize,colorreset
 colors={}#white,black,red,green,yellow,blue,magenta,cyan,lightgray,darkgray,lightred,lightgreen,lightyellow,lightblue,lightmagenta,lightcyan
 colors["white"]=37
@@ -33,7 +37,7 @@ def lcolorinit():
                 num += 10
             attr.append(str(num))
             if bold: attr.append('1')
-            if(file==sys.stderr or file==sys.stdout):
+            if(has_color()):
                 print('\x1b[%sm%s\x1b[0m' % (';'.join(attr), string),end=end,flush=flush,file=file)
             else:
                 print(string,end=end,flush=flush,file=file)
@@ -42,7 +46,8 @@ def lcolorinit():
     initdt.append(lshcolorize)
     def lshcolorreset(*a,**kw):
         try:
-            print('\033[0m',end="")
+            if(has_color()):
+                print('\033[0m',end="")
         except:
             pass
     initdt.append(lshcolorreset)

@@ -160,7 +160,10 @@ class ClientCmd(Cmd):
     def __init__(self):
         super().__init__()
         self.cd="/"
-        cd='\x1b[%sm%s\x1b[0m' % (';'.join([str(colors["blue"]),"1"]), self.cd)
+        if(co.has_color()):#Console has color
+            cd='\x1b[%sm%s\x1b[0m' % (';'.join([str(colors["blue"]),"1"]), self.cd)
+        else:
+            cd=self.cd
         self.prompt = strings.app.pro % cd
         self.intro = strings.app.intro
         self.d=DirTree()
