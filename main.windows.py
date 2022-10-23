@@ -51,7 +51,7 @@ def _makefilename(name:str):
         return str(name)
 def ls(path:str,d:DirTree,color=True):
     if(path=="/"):
-        if(len(d.root.children) and len(d.root.value)==0):
+        if(len(d.root.children)==0 and len(d.root.value)==0):
             print('\x1b[%sm%s\x1b[0m' % (';'.join([str(colors["lightgray"]),"3","1","2"]), strings.app.nofiles))
             return
         for i in d.root.children:
@@ -59,7 +59,7 @@ def ls(path:str,d:DirTree,color=True):
                 printcolor(colors["blue"],_makefilename(i.name),bold=True,end=" ")
             else:
                 print(_makefilename(i.name),end=" ")
-        for i in d.value:
+        for i in d.root.value:
             print(_makefilename(str(i)),end=" ")
     else:
         if((len(d.finddir(path.split("/")).children)==0) and (len(d.finddir(path.split("/")).value)==0)):
@@ -76,7 +76,7 @@ def ls(path:str,d:DirTree,color=True):
     print()
 def dir_(path:str,d:DirTree,color=True):
     if(path=="/"):
-        if(len(d.root.children) and len(d.root.value)==0):
+        if(len(d.root.children)==0 and len(d.root.value)==0):
             print('\x1b[%sm%s\x1b[0m' % (';'.join([str(colors["lightgray"]),"3","1","2"]), strings.app.nofiles))
             return
         for i in d.root.children:
@@ -84,7 +84,7 @@ def dir_(path:str,d:DirTree,color=True):
                 printcolor(colors["blue"],i.name,bold=True)
             else:
                 print(i.name)
-        for i in d.value:
+        for i in d.root.value:
             print(str(i))
     else:
         if(len(d.finddir(path.split("/")).children)==0 and len(d.finddir(path.split("/")).value)==0):
@@ -256,6 +256,11 @@ class ClientCmd(Cmd):
         _f.children.remove(_d)
         if(not self.d.hasdir(self.cd.split("/"))):
             self.do_cd("/")
+    def rmfileinroot(self,name:str):
+        for i in self.d.root.value:
+            if(i.relp==name):
+                self.d.root.value.remove(i)
+                break
     def rmfile(self,path:str):
         Log.info("Rm file: "+path)
         paths=path.replace("\\","/").split("/")
@@ -263,12 +268,15 @@ class ClientCmd(Cmd):
         for i in paths[0:-1]:
             if(i):
                 _d=_d.find(i)
-        _d.value.remove(paths[-1])
+        if(len(paths)==2):#file is in root
+            self.rmfileinroot(paths[-1])
+        else:
+            _d.value.remove(paths[-1])
     def do_rm(self,path:str):
         try:
             if(path):
                 path=(os.path.normpath(os.path.join(self.cd,path))).replace("\\","/").split("/")
-                if(self.d.hasdir(path)):
+                if(self.d.hasdir(path) and path!=['','']):#['',''] mean root
                     if(YN()):
                         self.rmdir("/".join(path))
                     else:
@@ -290,12 +298,7 @@ class ClientCmd(Cmd):
             Log.printerror()
             printcolor(colors["red"],strings.app.err+":"+getexc())
     def do_clear(self,arg:str):
-        if(platform.system().lower()=="windows"):
-            os.system("cls")
-        elif(platform.system().lower()=="linux"):
-            os.system("clear")
-        else:
-            print("\033c")
+        console.clear()
     def do_cls(self,arg:str):
         self.do_clear(arg)
     def do_cat(self,path:str):

@@ -22,7 +22,7 @@ class File:
     def __repr__(self):
         return self.path
     def __eq__(self, other):
-        return self.path == other.path
+        return self.relp == other.relp
     def __hash__(self):
         return hash(self.path)
     def isfile(self):
@@ -69,7 +69,6 @@ class DirTreeNode(TreeNode):
 class DirTree:
     log:Logger=None
     root:DirTreeNode=None
-    value=set()
     def scan(self):
         res=([],[],[])#files_rel,files_abs,dirs
         def d(t:DirTreeNode):
@@ -80,7 +79,7 @@ class DirTree:
                 res[2].append(i.relpath)
                 d(i)
         d(self.root)
-        for i in self.value:
+        for i in self.root.value:
             res[0].append(i.relp)
             res[1].append(i.path)
         return res
@@ -120,7 +119,7 @@ class DirTree:
         for i in files:
             try:
                 assert os.path.isfile(i)
-                self.value.add(File(str(i),os.path.basename(str(i))))
+                self.root.value.add(File(str(i),os.path.basename(str(i))))
             except:
                 ers+=1
                 self.log.error(strings.dirtree.notafile)
@@ -149,7 +148,7 @@ class DirTree:
     def hasobject(self,p:list[str]):
         return self.hasdir(p) or self.hasfile(p)
     def findfileinfiles(self,p:str):
-        for i in self.value:
+        for i in self.root.value:
             if(i.relp==p):
                 return i.path
     def findfile(self,p:list[str]):

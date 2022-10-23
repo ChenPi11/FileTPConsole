@@ -50,13 +50,12 @@ def getext(file:str):
         return ""
 def la(path:str,d:DirTree):# like omz la
     if(path=="/"):
-        #print(d.root.children,d.value,len(d.root.children),len(d.root.value))
-        if((len(d.root.children)==0) and (len(d.value)==0)):
+        if((len(d.root.children)==0) and (len(d.root.value)==0)):
             print('\x1b[%sm%s\x1b[0m' % (';'.join([str(colors["lightgray"]),"3","1","2"]), strings.app.nofiles))
             return
         for i in d.root.children:
             printcolor(colors["blue"],lang2icon["dir"]+" "+i.name,bold=True)
-        for i in d.value:
+        for i in d.root.value:
             if(os.access(getext(str(i)),1) or (platform.uname().system=="Windows" and getext(str(i))=="exe")):#can execute
                 printcolor(co.colors["green"],lang2icon[ext2lang[getext(str(i))]]+" "+str(i))
             else:

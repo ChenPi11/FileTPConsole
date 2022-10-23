@@ -1,27 +1,55 @@
-[37m[INFO SYSTEM 304776] ----------FileTP MainThread Start: argv=['E:\\Apps\\FileTPConsole\\main.windows.py'],cwd=E:\Apps\FileTPConsole,mainthread_ident=9668,pid:20404,time=2022-10-23 02:43:14----------[0m
-[37m[INFO CMD 3001668] Execute:add E:\*[0m
-[31m[ERROR DIRTREE 3003526] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3003627] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3003627] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3003627] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3003627] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3003912] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004798] 不是一个有效的文件[0m
-[31m[ERROR DIRTREE 3004798] 不是一个有效的文件[0m
-[37m[INFO CMD 3521515] Execute:ls[0m
-[37m[INFO CMD 4662829] Execute:la[0m
-[37m[INFO CMD 118054817] Execute:[0m
-[37m[INFO SYSTEM 118055380] ----------FileTP App Close:time:2022-10-23 02:45:12----------[0m
+[37m[INFO SYSTEM 165004] ----------FileTP MainThread Start: argv=['E:\\Apps\\FileTPConsole\\main.windows.py'],cwd=E:\Apps\FileTPConsole,mainthread_ident=6520,pid:14184,time=2022-10-23 03:18:59----------[0m
+[37m[INFO CMD 4632230] Execute:add E:\[0m
+[37m[INFO SYSTEM 4949320] Add dir:E:\[0m
+[37m[INFO CMD 7449097] Execute:rm E@mnt[0m
+[37m[INFO SYSTEM 8331009] Rm dir: /E@mnt[0m
+[37m[INFO CMD 8937803] Execute:ls[0m
+[37m[INFO CMD 9512192] Execute:ls[0m
+[37m[INFO CMD 18171411] Execute:add E:\*[0m
+[31m[ERROR DIRTREE 18173428] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18173428] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18173428] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18173428] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18173428] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18174411] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18175412] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 18175412] 不是一个有效的文件[0m
+[37m[INFO CMD 18671147] Execute:ls[0m
+[37m[INFO CMD 26858007] Execute:add E:\[0m
+[37m[INFO SYSTEM 27178016] Add dir:E:\[0m
+[37m[INFO CMD 27703526] Execute:ls[0m
+[37m[INFO CMD 43213970] Execute:rm E@mnt\新建位图图像.bmp[0m
+[37m[INFO SYSTEM 44314893] Rm file: /E@mnt/新建位图图像.bmp[0m
+[37m[INFO CMD 52376585] Execute:rm E@mnt\WIS.yrm[0m
+[37m[INFO SYSTEM 53394620] Rm file: /E@mnt/WIS.yrm[0m
+[37m[INFO CMD 60355632] Execute:ls E@mnt[0m
+[37m[INFO CMD 68441490] Execute:rm E@mnt/System Volume Information[0m
+[37m[INFO SYSTEM 69417615] Rm dir: /E@mnt/System Volume Information[0m
+[37m[INFO CMD 81444398] Execute:rm E@mnt/$RECYCLE.BIN[0m
+[37m[INFO SYSTEM 82445407] Rm dir: /E@mnt/$RECYCLE.BIN[0m
+[37m[INFO CMD 88946106] Execute:ls E@mnt[0m
+[37m[INFO CMD 92379490] Execute:la[0m
+[37m[INFO CMD 95554749] Execute:rm WIN.yrm[0m
+[37m[INFO CMD 100568839] Execute:rm WIS.yrm[0m
+[37m[INFO SYSTEM 101514900] Rm file: /WIS.yrm[0m
+[37m[INFO CMD 102132675] Execute:ls[0m
+[37m[INFO CMD 102752918] Execute:ls[0m
+[37m[INFO CMD 103304438] Execute:ls[0m
+[37m[INFO CMD 103878342] Execute:ls[0m
+[37m[INFO CMD 104490258] Execute:ls[0m
+[37m[INFO CMD 105043483] Execute:ls[0m
+[37m[INFO CMD 106444639] Execute:[0m
+[37m[INFO SYSTEM 106444639] ----------FileTP App Close:time:2022-10-23 03:20:45----------[0m
