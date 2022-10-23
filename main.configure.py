@@ -1,3 +1,8 @@
+import shutil
+try:
+    shutil.copyfile("FileTP.log","FileTP.log.bak")
+except:
+    pass
 from filetp_consoleui import *
 try:#可能是不必要的
     nullio=open(os.devnull,"w+")
@@ -27,6 +32,7 @@ def main():
     time.sleep(1)
     ui.update()
     os.system("pause")
+    ui.mainloop()
     ui.end()
 if(__name__=="__main__"):
     try:

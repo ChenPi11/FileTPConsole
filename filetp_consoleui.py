@@ -1,4 +1,11 @@
 from filetp_color import *
+def getch():
+    package=None
+    if(platform.uname()[0]=="Windows"):
+        package=__import__("msvcrt")
+    else:
+        package=__import__("getch")
+    return package.getch()
 def set_window_title(t:str):
     console.set_window_title(t)
 def replace_index(old_string, char, index):
@@ -43,7 +50,8 @@ def getext(file:str):
         return ""
 def la(path:str,d:DirTree):# like omz la
     if(path=="/"):
-        if(len(d.root.children)==0 and len(d.root.value)==0):
+        #print(d.root.children,d.value,len(d.root.children),len(d.root.value))
+        if((len(d.root.children)==0) and (len(d.value)==0)):
             print('\x1b[%sm%s\x1b[0m' % (';'.join([str(colors["lightgray"]),"3","1","2"]), strings.app.nofiles))
             return
         for i in d.root.children:
@@ -68,10 +76,18 @@ def la(path:str,d:DirTree):# like omz la
 
 class ConsoleUI:
     title=""
+    endloop=Event()
+    def _main(self,stdscr):
+        while(not self.endloop.set()):
+            keycode = stdscr.getch()
+            print(keycode,flush=True)
+            #if(keycode==curses.KEY_Q):
+            #    break
     def __init__(self):
         pass
     def init(self):
         self.update()
+        self.endloop.clear()
     def update(self):
         print("\x1b[44m",end="")
         console.control(Control.home())
@@ -89,7 +105,25 @@ class ConsoleUI:
         print("\x1b[0m",end="")
         console.clear()
             
-    
+class ConsoleUIMenu:
+    ui:ConsoleUI=None
+    l=[]
+    choise=0
+    line=1
+    def __init__(self,ui:ConsoleUI):
+        self.ui=ui
+    def set(self,l=[]):
+        self.l=l
+    def getchoise(self):
+        return self.choise
+    def setchoise(self,choise=0):
+        self.choise=choise
+    def init(self,line=1):
+        self.line=line
+        print("\033[s\033["+str(line)+";0H",end="",flush=True)
+    def update(self):
+        print("\033[s\033["+str(self.line)+";0H",end="",flush=True)
+        
 
 if(__name__=="__main__"):
     c=ConsoleUI()

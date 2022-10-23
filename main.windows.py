@@ -51,7 +51,7 @@ def _makefilename(name:str):
         return str(name)
 def ls(path:str,d:DirTree,color=True):
     if(path=="/"):
-        if((len(d.root.children)==0) and (len(d.root.value)==0)):
+        if(len(d.root.children) and len(d.root.value)==0):
             print('\x1b[%sm%s\x1b[0m' % (';'.join([str(colors["lightgray"]),"3","1","2"]), strings.app.nofiles))
             return
         for i in d.root.children:

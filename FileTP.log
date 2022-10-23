@@ -1,1 +1,27 @@
-[37m[INFO SYSTEM 372444] ----------FileTP Setting MainThread Start: argv=['e:\\Apps\\FileTPConsole\\main.configure.py'],cwd=E:\Apps\FileTPConsole,mainthread_ident=20140,pid:21760,time=2022-10-22 13:23:04----------[0m
+[37m[INFO SYSTEM 304776] ----------FileTP MainThread Start: argv=['E:\\Apps\\FileTPConsole\\main.windows.py'],cwd=E:\Apps\FileTPConsole,mainthread_ident=9668,pid:20404,time=2022-10-23 02:43:14----------[0m
+[37m[INFO CMD 3001668] Execute:add E:\*[0m
+[31m[ERROR DIRTREE 3003526] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3003627] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3003627] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3003627] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3003627] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3003912] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004051] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004798] 不是一个有效的文件[0m
+[31m[ERROR DIRTREE 3004798] 不是一个有效的文件[0m
+[37m[INFO CMD 3521515] Execute:ls[0m
+[37m[INFO CMD 4662829] Execute:la[0m
+[37m[INFO CMD 118054817] Execute:[0m
+[37m[INFO SYSTEM 118055380] ----------FileTP App Close:time:2022-10-23 02:45:12----------[0m
