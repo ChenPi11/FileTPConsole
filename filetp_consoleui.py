@@ -1,11 +1,55 @@
 from filetp_color import *
+
+KEY_UP="↑"
+KEY_DOWN="↓"
+KEY_LEFT="←"
+KEY_RIGHT="→"
+KEY_ENTER="\n"
+if(platform.uname()[0]=="Windows"):
+    KEY_ENTER="\r"
+
 def getch():
-    package=None
     if(platform.uname()[0]=="Windows"):
-        package=__import__("msvcrt")
+        msvcrt=__import__("msvcrt")
+        c=msvcrt.getch()
+        if(c==b'\x00' or c==b'\xe0'):#a=0,a=224是功能键
+            b=msvcrt.getch()
+            match b:
+                case b'H':
+                    return KEY_UP
+                case b'P':
+                    return KEY_DOWN
+                case b'K':
+                    return KEY_LEFT
+                case b'M':
+                    return KEY_RIGHT
+                case _:
+                    return ""
+        return c.decode(errors="ignore")
     else:
-        package=__import__("getch")
-    return package.getch()
+        getch=__import__("getch")
+        def _getch():
+            try:
+                return getch.getch()
+            except:
+                return _getch()
+        c=_getch()
+        if(c=="\x1b"):
+            if(_getch()!="["):
+                return "\x1b"
+            b=_getch()
+            match b:
+                case "A":
+                    return KEY_UP
+                case "B":
+                    return KEY_DOWN
+                case "D":
+                    return KEY_LEFT
+                case "C":
+                    return KEY_RIGHT
+                case _:
+                    return b
+        return c
 def set_window_title(t:str):
     console.set_window_title(t)
 def replace_index(old_string, char, index):
@@ -75,15 +119,14 @@ def la(path:str,d:DirTree):# like omz la
 
 class ConsoleUI:
     title=""
-    endloop=Event()
-    def _main(self,stdscr):
-        while(not self.endloop.set()):
-            keycode = stdscr.getch()
-            print(keycode,flush=True)
-            #if(keycode==curses.KEY_Q):
-            #    break
+    endloop:Event=None
+    keyevents:ConvDict=None
+    lastline=1#上一个创建了组件的行
     def __init__(self):
-        pass
+        self.title=""
+        self.endloop=Event()
+        self.keyevents=ConvDict({})
+        self.keyevents.default=nullfun
     def init(self):
         self.update()
         self.endloop.clear()
@@ -94,6 +137,7 @@ class ConsoleUI:
         print(" "*console.size[0]*(console.size[1]-1),end="",flush=True)
         console.control(Control.home())
         print("")
+        self.lastline=1
     def settitle(self,t:str):
         self.title=t
         console.set_window_title(t)
@@ -103,28 +147,116 @@ class ConsoleUI:
     def end(self):
         print("\x1b[0m",end="")
         console.clear()
-            
+        self.endloop.set()
+    def regkeyevent(self,key:str,event):
+        self.keyevents[key]=event
+    def unregkeyevent(self,key:str):
+        self.keyevents[key]=nullfun
+    def mainloop(self):
+        while(not self.endloop.is_set()):
+            c=getch()
+            self.keyevents[c]()
+LAYOUT_MIDDLE=-1
+
+class ConsoleUILabel:
+    ui:ConsoleUI=None
+    text:str=""
+    line=None
+    layout=0
+    def __init__(self,ui:ConsoleUI,line=None,text="",layout=0):
+        self.ui=ui
+        self.init(line,text,layout)
+    def init(self,line=None,text="",layout=0):
+        self.line=line
+        if(self.line==None):
+            self.line=self.ui.lastline
+            self.ui.lastline+=1
+        self.text=text
+        self.layout=layout
+        self.update()
+    def update(self):
+        print("\033[s\033["+str(self.line+1)+";0H",end="",flush=True)
+        if(self.layout==LAYOUT_MIDDLE):
+            print("\x1b[44m"+" "*((console.size[0]-len(self.text))//2),end="",flush=True)
+        print(self.text,flush=True)
+    def settext(self,text:str):
+        self.text=text
+        self.update()
+    def gettext(self):
+        return self.text
+class ConsoleUISeperator:
+    ui:ConsoleUI=None
+    line=None
+    def __init__(self,ui:ConsoleUI,line=None):
+        self.ui=ui
+        self.init(line)
+    def init(self,line=None):
+        self.line=line
+        if(self.line==None):
+            self.line=self.ui.lastline
+            self.ui.lastline+=1
+        self.update()
+    def update(self):
+        print("\033[s\033["+str(self.line+1)+";0H",end="",flush=True)
+        print("-"*console.size[0],end="",flush=True)
 class ConsoleUIMenu:
     ui:ConsoleUI=None
     l=[]
     choise=0
-    line=1
-    def __init__(self,ui:ConsoleUI):
+    line=None
+    layout=0#left
+    submit_event=None
+    def __init__(self,ui:ConsoleUI,line=None,layout=0):
         self.ui=ui
+        self.l=[]
+        self.choise=0
+        self.submit_event=Event()
+        self.init(line,layout)
     def set(self,l=[]):
         self.l=l
     def getchoise(self):
+        self.submit_event.wait()
         return self.choise
     def setchoise(self,choise=0):
         self.choise=choise
-    def init(self,line=1):
+    def init(self,line=None,layout=0):
         self.line=line
-        print("\033[s\033["+str(line)+";0H",end="",flush=True)
-    def update(self):
-        print("\033[s\033["+str(self.line)+";0H",end="",flush=True)
-        
+        if(self.line==None):
+            self.line=self.ui.lastline
+        self.layout=layout
+        self.update()
+        self.ui.regkeyevent(KEY_UP,self.up)
+        self.ui.regkeyevent(KEY_DOWN,self.down)
+        self.ui.regkeyevent(KEY_ENTER,self.submit)
+    def up(self):
+        if(self.choise<=0):
+            return
+        self.choise-=1
+        self.update()
+    def down(self):
+        if(self.choise>=(len(self.l)-1)):
+            return
+        self.choise+=1
+        self.update()
+    def submit(self):
+        self.submit_event.set()
+    def update(self,start=""):
+        self.ui.lastline+=len(self.l)
+        print("\033[s\033["+str(self.line+1)+";0H",end="",flush=True)
+        for i in range(0,len(self.l)):
+            obj=str(self.l[i])
+            if(self.layout==-1):#middle
+                print("\x1b[44m"+" "*((console.size[0]-len(max(self.l, key=len, default="")))//2),end="",flush=True)#列表求最长,除2
+            if(i==self.choise):
+                print("\x1b[0m",end="",flush=True)
+            else:
+                print("\x1b[44m",end="",flush=True)
+            print(start,obj,sep="",flush=True)
+    def destroy(self):
+        self.ui.unregkeyevent(KEY_ENTER)
+        self.ui.unregkeyevent(KEY_UP)
+        self.ui.unregkeyevent(KEY_DOWN)
+        self.ui.update()
 
 if(__name__=="__main__"):
-    c=ConsoleUI()
-    c.init()
-    c.end()
+    pass

@@ -27,12 +27,19 @@ def main():
     ui=ConsoleUI()
     ui.init()
     ui.settitle("FileTP Settings")
-    print("正在读取设置...")
-    print(config)
-    time.sleep(1)
-    ui.update()
+    ConsoleUILabel(ui,text="").update()
+    ConsoleUILabel(ui,text="114514",layout=LAYOUT_MIDDLE)
+    ConsoleUILabel(ui,text="1919810",layout=LAYOUT_MIDDLE)
+    ConsoleUISeperator(ui)
+    m=ConsoleUIMenu(ui,layout=LAYOUT_MIDDLE)
+    m.set(["1"*10,"2","3"])
+    m.update()
+    ui.regkeyevent("\x1b",ui.end)
+    Thread(target=ui.mainloop,daemon=True).start()
+    c=m.l[m.getchoise()]
+    m.destroy()
+    print("choise:",c)
     os.system("pause")
-    ui.mainloop()
     ui.end()
 if(__name__=="__main__"):
     try:
@@ -45,3 +52,5 @@ if(__name__=="__main__"):
         Log.fatal("----------UNHANDLED EXCEPTION!!!!!!!----------")
         Log.printerror()
         sys.exit(-1)
+import curses
+curses.getch
