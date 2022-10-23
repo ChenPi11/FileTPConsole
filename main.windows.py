@@ -9,7 +9,7 @@ print('------args---------',args)
 '''
 import platform
 import ctypes
-from cmd import Cmd
+from filetp_cmd import Cmd
 from subprocess import *
 import sys
 import glob
