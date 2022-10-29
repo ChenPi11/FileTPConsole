@@ -34,11 +34,14 @@ def main():
     m=ConsoleUIMenu(ui,layout=LAYOUT_MIDDLE)
     m.set(["1"*10,"2","3"])
     m.update()
-    ui.regkeyevent("\x1b",ui.end)
+    ui.regkeyevent("\x1b",ui.end)#Esc
     Thread(target=ui.mainloop,daemon=True).start()
     c=m.l[m.getchoise()]
     m.destroy()
     print("choise:",c)
+    os.system("pause")
+    i=ConsoleUIInput(ui,"输入:")
+    print(i.get())
     os.system("pause")
     ui.end()
 if(__name__=="__main__"):

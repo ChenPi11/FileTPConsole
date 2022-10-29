@@ -138,6 +138,7 @@ class ConsoleUI:
         console.control(Control.home())
         print("")
         self.lastline=1
+        self.keyevents.clear()
     def settitle(self,t:str):
         self.title=t
         console.set_window_title(t)
@@ -257,6 +258,21 @@ class ConsoleUIMenu:
         self.ui.unregkeyevent(KEY_UP)
         self.ui.unregkeyevent(KEY_DOWN)
         self.ui.update()
-
+class ConsoleUIInput:
+    ui:ConsoleUI=None
+    msg:str=""
+    res:str=""
+    def __init__(self,ui,msg=""):
+        self.msg=msg
+        self.ui=ui
+        self.update()
+    def update(self):
+        self.ui.update()
+        print("\033[1;0H",end="",flush=True)
+        self.res=input("\x1b[44m"+self.msg)
+        self.ui.update()
+    def get(self):
+        return self.res
+        
 if(__name__=="__main__"):
     pass
