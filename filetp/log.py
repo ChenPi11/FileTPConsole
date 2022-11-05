@@ -110,12 +110,14 @@ class Logger:
     file:TextIO=None
     _flush=False
     format:str=""
-    def __init__(self,name:str="SYSTEM",file:TextIO=sys.stderr,format:str="[{lvl} {name} {time}] {msg}",flush:bool=False):
+    use_color=False
+    def __init__(self,name:str="SYSTEM",file:TextIO=sys.stderr,format:str="[{lvl} {name} {time}] {msg}",flush:bool=False,use_color=False):
         global loggers
         self.name=str(name)
         self.file=file
         self._flush=flush
         self.format=format
+        self.use_color=use_color
         if(not file.writable()):
             raise TypeError(strings.log.ioserr)
         if(name.upper() in loggers.keys()):
@@ -140,8 +142,11 @@ class Logger:
     def log(self,level:str,msg:str,color:str="white",ctl:bool=False):
         '''Print log message to file. msg:message,ctl:iscritical'''
         try:
-            co.initdt[1](co.colors[color],self.format.format(lvl=level,name=self.name,time=gettime(),msg=msg),flush=self._flush,end="\n",
-                bold=ctl,highlight=ctl,file=self.file)
+            if(self.use_color):
+                co.initdt[1](co.colors[color],self.format.format(lvl=level,name=self.name,time=gettime(),msg=msg),flush=self._flush,end="\n",
+                    bold=ctl,highlight=ctl,file=self.file)
+            else:
+                print(self.format.format(lvl=level,name=self.name,time=gettime(),msg=msg),end="\n",flush=self._flush,file=self.file)
         except:
             self.write("Error:"+getexc()+"\t,"+str(gettime())+","+level+","+msg+"\n")
     def info(self,msg:str):

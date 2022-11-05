@@ -18,6 +18,7 @@ from filetp.filetp import *
 from filetp_color import *
 from filetp_commands import *
 from filetp_consoleui import *
+from filetp_network import *
 import os
 try:#可能是不必要的
     nullio=open(os.devnull,"w+")
@@ -149,7 +150,9 @@ class ClientCmd(Cmd):
     intro = strings.app.intro
     cd="/"
     d:DirTree=None
-    c:Client=None
+    @property
+    def c(self):
+        return client
     timeout=6
     def chdirupdate(self):
         if(self.d.hasdir(self.cd.split("/"))):
@@ -343,14 +346,14 @@ class ClientCmd(Cmd):
     #network
     def do_connect(self,arg):
         if(_connected(self.c)):
-            print(strings.app.messages.helps.connect)
+            print(strings.app.messages.connected)
             return
         if(not arg):
             self.help_connect()
             return
         l=LoadingBar()
         try:
-            self.c=Client()
+            #self.c=Client()
             addr=parse_addr(arg)
             printcolor(colors["yellow"],strings.app.messages.connecting % (str(addr[0])+":"+str(addr[1])))
             l.start()
@@ -365,12 +368,48 @@ class ClientCmd(Cmd):
             l.stop()
             self.c.close()
             printcolor(colors["red"],getexc())
-    def do_bind(self,arg):
-        if(_connected(self.c)):
-            print(strings.app.messages.connected)
-            return
-        print("test,arg=",arg)
-        self._make_qrcode(arg)
+    def do_ip(self,arg):
+        display_format = '%-30s %-20s'
+        rg,rnn,rnm,ip,ipm=get_nic_info()
+        print(display_format % ("Routing Gateway:", rg))
+        print(display_format % ("Routing NIC Name:", rnn))
+        print(display_format % ("Routing NIC MAC Address:", rnm))
+        print(display_format % ("Routing IP Address:", ip))
+        print(display_format % ("Routing IP Netmask:", ipm))
+        
+        Log.info(display_format % ("Routing Gateway:", rg))
+        Log.info(display_format % ("Routing NIC Name:", rnn))
+        Log.info(display_format % ("Routing NIC MAC Address:", rnm))
+        Log.info(display_format % ("Routing IP Address:", ip))
+        Log.info(display_format % ("Routing IP Netmask:", ipm))
+    def do_bind(self,arg:str):
+        try:
+            if(not len(arg.strip())):
+                display_format = '%-30s %-20s'
+                rg,rnn,rnm,ip,ipm=get_nic_info()
+                Log.info(display_format % ("Routing Gateway:", rg))
+                Log.info(display_format % ("Routing NIC Name:", rnn))
+                Log.info(display_format % ("Routing NIC MAC Address:", rnm))
+                Log.info(display_format % ("Routing IP Address:", ip))
+                Log.info(display_format % ("Routing IP Netmask:", ipm))
+                arg=ip
+            if(_connected(self.c)):
+                print(strings.app.messages.connected)
+                return
+            addr=parse_addr(ip)
+            if(not len(arg.strip())):
+                addr[0]=""
+            self._make_qrcode(addr)
+            print(addr[0]+":"+str(addr[1]))
+            server.init(addr[0],addr[1])
+            print(strings.app.messages.wait_conn % (addr[0]+":"+str(addr[1])))
+            server.accept()
+            print(strings.app.messages.after_conn % (self.c.sk.addr[0]+":"+str(self.c.sk.addr[1])))
+            Thread(target=client.mainloop,daemon=True,name="FileTP Mainloop").start()
+            print(_connected(self.c))
+        except:
+            Log.printerror()
+            printcolor(colors["red"],getexc())
     def do_close(self,arg):
         try:
             if(not _connected(self.c)):
@@ -380,7 +419,7 @@ class ClientCmd(Cmd):
             if(YN()):
                 self.c.close()
                 printcolor(colors["green"],strings.app.messages.closed)
-                self.c=None
+                #self.c=None
             else:
                 printcolor(colors["red"],strings.app.terminate)
         except:

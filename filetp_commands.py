@@ -105,30 +105,6 @@ class Client:
             except:
                 log.printerror()
         log.info("End mainloop")
-    def adddir(self,path:str):
-        Log.info("Add dir: "+path)
-        self.d.adddir(path)
-    def addfiles(self,paths:list[str]):
-        Log.info("Add files: "+str(paths))
-        self.d.addfiles(paths)
-    def rmdir(self,path:str):
-        Log.info("Rm dir: "+path)
-        paths=path.replace("\\","/").split("/")
-        _d=self.d.root
-        _f=None
-        for i in paths:
-            if(i):
-                _f=_d
-                _d=_d.find(i)
-        _f.children.remove(_d)
-    def rmfile(self,path:str):
-        Log.info("Rm file: "+path)
-        paths=path.replace("\\","/").split("/")
-        _d=self.d.root
-        for i in paths[0:-1]:
-            if(i):
-                _d=_d.find(i)
-        _d.value.remove(paths[-1])
     def pausemainloop(self):
         self._not_pause_mainloop.clear()
         #self.sk.sk.sk.setblocking(False)
@@ -149,10 +125,49 @@ class Client:
         self.sk.sends(self.d)
         self._sending.clear()
         self.resumemainloop()
-        self.d=None
-        self.d=DirTree()
-    def list(self):
-        sr=self.d.scan()
-        return sr[0],sr[2]
-
+    def setdirtree(self,d:DirTree):
+        self.d=d
 client=Client()
+
+class Server:
+    ip:str=""
+    port:int=0
+    ssk:FileTPServer=None
+    log:Logger=None
+    def __init__(self):
+        self.ip=""
+        self.port=0
+        self.ssk=None
+        self.log=getLogger("SERVER")
+    def init(self,ip:str,port:int):
+        self.ip=ip
+        self.port=port
+        self.ssk=None
+        self.ssk=FileTPServer()
+        self.ssk.ssk.settimeout(6)
+        self.ssk.bind(ip,port)
+        self.ssk.ssk.settimeout(None)
+        self.log.info("Server init")
+    def close(self):
+        self.log.info("Server close")
+        self.ip=""
+        self.port=0
+        try:
+            self.ssk.close()
+        except:
+            pass
+        self.ssk=None
+    def accept(self):
+        csk=self.ssk.accept(self.ip,self.port)
+        self.log.info("Server accept")
+        try:
+            client.sk.close()
+        except:
+            pass
+        client.sk=csk
+        client.sk.sk.settimeout(None)
+        self.close()
+server=Server()
+
+def _FileTPDaemon():
+    pass

@@ -3,4 +3,6 @@
 /dist
 __pycache__/
 *.log
+*.bak
+/out
 /venv
