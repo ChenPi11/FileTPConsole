@@ -1,5 +1,8 @@
 import os
 from filetp.filetp import *
+from filetp_consoleui import *
+from filetp_network import *
+from filetp_color import *
 
 class Client:
     sk=None
@@ -7,6 +10,7 @@ class Client:
     d:DirTree=None
     _not_pause_mainloop:Event=None
     _sending:Event=None
+    _accept_recv:Event=None
     def __init__(self):
         self.sk=None
         self.events={}
@@ -16,12 +20,14 @@ class Client:
         self._not_pause_mainloop=Event()
         self._not_pause_mainloop.set()
         self._sending=Event()
+        self._accept_recv=Event()
     def init(self,ip:str,port:int):
         self.sk=None
         self.sk=FileTP()
         self.sk.connect(ip,port)
         self.d=DirTree()
         self._not_pause_mainloop.set()
+        initcli()
     def close(self):
         try:
             try:
@@ -51,7 +57,7 @@ class Client:
                     Thread(target=_FileTPDaemon,daemon=True,name="FileTP Daemon").start()
                     self.sk.recvs(config.get("save","."))
                     self._sending.clear()
-                    self._sending.clear()
+                    #self._accept_recv.clear()
                     log.info("Recv file suc")
                 elif(dt["type"]=="pause"):
                     log.info("mainloop paused")
@@ -128,7 +134,16 @@ class Client:
     def setdirtree(self,d:DirTree):
         self.d=d
 client=Client()
-
+def initcli():#初始化Client的事件
+    def recvfile_onquest(dirsize):
+        printcolor(colors["yellow"],"收到发送文件请求，文件大小:"+str(dirsize)+"，命令行输入accept以接受",bold=True,flush=True)
+        
+        client._accept_recv.clear()
+        client._accept_recv.wait()
+        client._accept_recv.clear()
+        return True
+    client.sk.stat["onquest"]=recvfile_onquest
+    
 class Server:
     ip:str=""
     port:int=0
@@ -165,9 +180,54 @@ class Server:
         except:
             pass
         client.sk=csk
-        client.sk.sk.settimeout(None)
+        initcli()
+        #client.sk.sk.settimeout(None)
         self.close()
 server=Server()
 
 def _FileTPDaemon():
-    pass
+    log=getLogger("DAEMON")
+    log.info("FileTP Daemon start!")
+    try:
+        client._accept_recv.wait()
+        with Progress(
+            SpinnerColumn(),
+            *Progress.get_default_columns(),
+            TimeElapsedColumn(),
+            console=console,
+            transient=False,
+        ) as progress:
+            task1 = progress.add_task("[red]Downloading", total=client.sk.stat["file_size"])
+            task2 = progress.add_task("[green]Total", total=client.sk.stat["filecount"])
+            _last_filename=""
+            while(client._sending.is_set()):
+                stat=client.sk.stat["stat"]
+                if(stat==STAT_REDAY):
+                    pass
+                elif(stat==STAT_WAIT):
+                    pass
+                else:
+                    fc=client.sk.stat["filecount"]
+                    fn=client.sk.stat["filenow"]
+                    filename=client.sk.stat["file_name"]
+                    fs=client.sk.stat["file_size"]
+                    fp=client.sk.stat["file_now"]
+                    if(not progress.finished):
+                        if(filename!=_last_filename):
+                            _last_filename=filename
+                            progress.log(strings.app.recving % filename)
+                        progress.update(task1, completed=fp,total=fs)
+                        progress.update(task2, completed=fn,total=fc)
+                time.sleep(0.05)
+            progress.update(task1, completed=1,total=1)
+            progress.update(task2, completed=1,total=1)
+            progress.stop_task(task1)
+            progress.stop_task(task2)
+            progress.stop()
+            printcolor(colors["green"],strings.app.recv_done,bold=True,flush=True)
+        client._accept_recv.clear()
+    except:
+        log.printerror()
+        #client._sending.clear()
+        client._accept_recv.clear()
+    log.info("FileTP Daemon exit!")

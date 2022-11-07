@@ -248,7 +248,7 @@ def install(
             builtins._ = value  # type: ignore[attr-defined]
 
     try:  # pragma: no cover
-        ip = get_ipython()  # type: ignore[name-defined]
+        #ip = get_ipython()  # type: ignore[name-defined]
         from IPython.core.formatters import BaseFormatter
 
         class RichFormatter(BaseFormatter):  # type: ignore[misc]
@@ -271,7 +271,7 @@ def install(
 
         # replace plain text formatter with rich formatter
         rich_formatter = RichFormatter()
-        ip.display_formatter.formatters["text/plain"] = rich_formatter
+        #ip.display_formatter.formatters["text/plain"] = rich_formatter
     except Exception:
         sys.displayhook = display_hook
 

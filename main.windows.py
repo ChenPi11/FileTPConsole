@@ -15,10 +15,7 @@ import sys
 import glob
 import qrcode
 from filetp.filetp import *
-from filetp_color import *
 from filetp_commands import *
-from filetp_consoleui import *
-from filetp_network import *
 import os
 try:#可能是不必要的
     nullio=open(os.devnull,"w+")
@@ -27,7 +24,7 @@ except:
 if(platform.uname()[0]=="Windows"):
     cp=ctypes.windll.kernel32.GetConsoleCP()
     path=os.path.join(os.getenv("SystemRoot"),"System32","chcp.com")#%SystemRoot%\System32\chcp.com
-    p=Popen([path,str(cp)],shell=True,stdout=sys.stdout,stderr=nullio,cwd=os.getcwd())#重新加载codepage
+    p=Popen([path,str(cp),">","NUL"],shell=True,stdout=sys.stdout,stderr=nullio,cwd=os.getcwd())#重新加载codepage
     p.wait()
     
 def exit():
@@ -116,6 +113,7 @@ def _connected(c:Client):
         return not c.sk.closed
     except:
         return False
+
 class ClientCmd(Cmd):
     def _make_qrcode(self,msg):
         qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_L,box_size=1,border=1)
@@ -339,6 +337,7 @@ class ClientCmd(Cmd):
                      "rm           "+strings.app.messages.helps._help_msg.rm2+"\n"+ \
                      "cat/type     "+strings.app.messages.helps._help_msg.type2+"\n"+ \
                      "connect      "+strings.app.messages.helps._help_msg.connect2+"\n"+ \
+                     "bind         "+strings.app.messages.helps._help_msg.bind+"\n"+\
                      "close        "+strings.app.messages.helps._help_msg.close2+"\n"+ \
                      strings.app.messages.helps._help_msg.end_help
             printcolor(colors["white"],help_msg,bold=True)
@@ -369,13 +368,13 @@ class ClientCmd(Cmd):
             self.c.close()
             printcolor(colors["red"],getexc())
     def do_ip(self,arg):
-        display_format = '%-30s %-20s'
+        display_format = '\x1b['+str(colors["white"])+';1m%-30s:\x1b['+str(colors["green"])+'m %-20s\x1b[0m'
         rg,rnn,rnm,ip,ipm=get_nic_info()
-        print(display_format % ("Routing Gateway:", rg))
-        print(display_format % ("Routing NIC Name:", rnn))
-        print(display_format % ("Routing NIC MAC Address:", rnm))
-        print(display_format % ("Routing IP Address:", ip))
-        print(display_format % ("Routing IP Netmask:", ipm))
+        print(display_format % (strings.app.routing_gateway, rg))
+        print(display_format % (strings.app.routing_NIC, rnn))
+        print(display_format % (strings.app.routing_MAC, rnm))
+        print(display_format % (strings.app.routing_IP, ip))
+        print(display_format % (strings.app.routing_nmask, ipm))
         
         Log.info(display_format % ("Routing Gateway:", rg))
         Log.info(display_format % ("Routing NIC Name:", rnn))
@@ -406,10 +405,16 @@ class ClientCmd(Cmd):
             server.accept()
             print(strings.app.messages.after_conn % (self.c.sk.addr[0]+":"+str(self.c.sk.addr[1])))
             Thread(target=client.mainloop,daemon=True,name="FileTP Mainloop").start()
-            print(_connected(self.c))
+            server.close()
         except:
             Log.printerror()
             printcolor(colors["red"],getexc())
+    def do_accept(self,arg):
+        client._accept_recv.set()
+        while(client._sending.is_set()):
+            time.sleep(0.05)
+        while(client._accept_recv.is_set()):
+            time.sleep(0.05)
     def do_close(self,arg):
         try:
             if(not _connected(self.c)):
@@ -419,7 +424,6 @@ class ClientCmd(Cmd):
             if(YN()):
                 self.c.close()
                 printcolor(colors["green"],strings.app.messages.closed)
-                #self.c=None
             else:
                 printcolor(colors["red"],strings.app.terminate)
         except:

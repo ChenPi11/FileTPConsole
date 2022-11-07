@@ -102,6 +102,7 @@ class FileTP:
             self.closed=False
         self.addr=a
         self.log=log
+        self.stat=self.sk.stat
         self.stat["stat"]=STAT_REDAY
         self.stat["file_size"]=1#socket2
         self.stat["file_now"]=0#socket2
@@ -213,6 +214,7 @@ class FileTP:
                 except:
                     self.log.fail("mkdir "+os.path.join(path,i)+" failed")
             filecount=dsiz(self.sk.sk.recv(8))#r <filecount>
+            self.stat["filecount"]=filecount
             self.stat["stat"]=STAT_RECVING
             for i in range(filecount):
                 if(self._abort):

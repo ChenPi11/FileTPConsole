@@ -5,7 +5,7 @@ from rich.console import *
 from rich.syntax import *
 from rich.highlighter import *
 from rich.progress import *
-
+import rich.text
 co.init(co.COMODE_LINUX)
 def printcolor(num,string,bold=False,highlight=False,end="\n",flush=False,file=sys.stdout):
     co.initdt[1](num,string,bold,highlight,end,flush,file)

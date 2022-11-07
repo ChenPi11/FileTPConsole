@@ -73,6 +73,7 @@ class strings:
                     help2="显示此帮助文档"
                     #network commands
                     connect2="连接指定的IP地址和端口号"
+                    bind="开放设备作为FileTP服务器"
                     close2="关闭连接"
 
                     end_help="执行 help [command] 显示命令的详细用法"
@@ -114,6 +115,13 @@ class strings:
         unkowncmd="未知的命令:"
         terminate="终止"
         nofiles="没有文件"
+        routing_gateway="路由网关"
+        routing_NIC="路由NIC名称"
+        routing_MAC="路由NIC MAC地址"
+        routing_IP="路由IP地址"
+        routing_nmask="子网掩码"
+        recving="正在接收:%s"
+        recv_done="接收完成"
 LANGPACK="zh-cn.lang"
 CONFFILE="config.cfg"
 LOGFILE="FileTP.log"
