@@ -1,11 +1,32 @@
-# /bin/env python3
+# /usr/bin/env python3
 # -*- coding:utf-8 -*-
 try:
+    def YN():
+        res=input("(y/N)").lower()=="y"
+        return res
     import venv
     import os
     import platform
     import glob
     import sys
+    import shutil
+    def _rm_pycache(_,p):
+        l=glob.glob(os.path.join(p,"*"))
+        if(os.path.basename(p)=="__pycache__"):
+            _.append(p)
+        for i in l:
+            if(os.path.isdir(i)):
+                _rm_pycache(_,i)
+    def rm_pycache():
+        _=[]
+        _rm_pycache(_,".")
+        for i in _:
+            print(i)
+            try:
+                shutil.rmtree(i)
+            except Exception as e:
+                print("ERR:",i,e)
+                
     if(not os.path.exists("venv")):
         print("[INIT] 正在创建 venv")
         venv.create("venv",with_pip=True)
@@ -64,15 +85,34 @@ try:
             print("making",i,"...")
             venv.subprocess.Popen([python,"-m","PyInstaller",i],shell=True).wait()
         print("make完成")
-
+    def clean():
+        print("是否clean?")
+        if(YN()):
+            print("rm __pycache__")
+            rm_pycache()
+            print("rm dist")
+            try:
+                shutil.rmtree("dist")
+            except:
+                pass
+            print("rm build")
+            try:
+                shutil.rmtree("build")
+            except:
+                pass
     try:
         if(sys.argv[1]=="make"):
             make()
             sys.exit(0)
+        elif(sys.argv[1]=="clean"):
+            clean()
+            sys.exit(0)
+    except SystemExit:
+        raise
     except:
         pass
     while(1):
-        print("venv 管理器\n\t0:初始化venv\n\t1:pip 管理器\n\t2:python shell\n\t3:python -m 执行\n\t4:make\n\t5:安装dependence.list中依赖\n\t6:exit退出")
+        print("venv 管理器\n\t0:初始化venv\n\t1:pip 管理器\n\t2:python shell\n\t3:python -m 执行\n\t4:make\n\t5:安装dependence.list中依赖\n\t6:clean\n\t7:exit退出")
         try:
             i=int(input(":"))
             if(i==0):
@@ -88,6 +128,8 @@ try:
             elif(i==5):
                 install_dependence()
             elif(i==6):
+                clean()
+            elif(i==7):
                 sys.exit(0)
             else:
                 raise ValueError()

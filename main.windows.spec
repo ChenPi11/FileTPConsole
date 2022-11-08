@@ -7,7 +7,7 @@ import shutil
 
 block_cipher = None
 
-a = Analysis(['main.windows.py'],
+a = Analysis(["main.windows.py"],
              pathex=[],
              binaries=[],
              datas=[],
@@ -47,6 +47,50 @@ coll = COLLECT(exe,
                upx=True,
                upx_exclude=[],
                name='FileTPConsole')
+#---------------------------------------------------------------------
+ca = Analysis(["main.configure.py"],
+             pathex=[],
+             binaries=[],
+             datas=[],
+             hiddenimports=["subprocess","qrcode"],
+             hookspath=[],
+             hooksconfig={},
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher,
+             noarchive=False)
+cpyz = PYZ(ca.pure, ca.zipped_data,
+             cipher=block_cipher)
+
+cexe = EXE(cpyz,
+          ca.scripts, 
+          [],
+          exclude_binaries=True,
+          name='main.config',
+          debug=False,
+          bootloader_ignore_signals=False,
+          strip=False,
+          upx=True,
+          console=True,
+          disable_windowed_traceback=False,
+          target_arch=None,
+          codesign_identity=None,
+          entitlements_file=None,
+          icon=['./res/icon.ico'],
+          version='./res/main.windows.spec.version.txt' )
+ccoll = COLLECT(cexe,
+               ca.binaries,
+               ca.zipfiles,
+               ca.datas, 
+               strip=False,
+               upx=True,
+               upx_exclude=[],
+               name='FileTPConsole_config')
+for i in glob.glob("./dist/FileTPConsole_config/main.config*"):
+    shutil.copyfile(i,os.path.join("./dist/FileTPConsole",os.path.basename(i)))
+    print("copy",i,"to ./dist/FileTPConsole/")
 print(os.path.abspath("."))
 print("clean filetp/__pycache__ ...")
 try:
