@@ -100,6 +100,16 @@ try:
                 shutil.rmtree("build")
             except:
                 pass
+            print("rm FileTP.log")
+            try:
+                os.remove("FileTP.log")
+            except:
+                pass
+            print("rm FileTP.log.bak")
+            try:
+                os.remove("FileTP.log.bak")
+            except:
+                pass
     try:
         if(sys.argv[1]=="make"):
             make()
