@@ -28,6 +28,7 @@ class strings:
             title="关于 - FileTP"
             about="FileTP 是一个文件传输程序，你可以用它在计算机间互相传输文件。\nFileTP 不是 \"FTP\" 并且不支持 \"FTP\"。\nFileTP 是一个免费软件，你可以免费使用它。\nFileTP 可以在 Linux,Windows,Windows NT 上使用，\n适用于手机-电脑中大文件（夹）传输，或者虚拟机-实体机中传输文件。\n\nCopyright (C) 2022  ChenPi11\nhttps://github.com/ChenPi11"
         class messages:
+            wait_accept="等待传输建立..."
             wait_conn="等待连接:%s..."
             after_conn="连接成功:%s"
             conn_closed="连接已经关闭"

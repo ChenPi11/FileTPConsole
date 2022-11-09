@@ -30,6 +30,7 @@ def debugmode(mode:int=0,printmsg:bool=True):
     co.init(mode)
 if(co.LOGFILE):
     try:
+        #f=sys.stdout
         f=open(co.LOGFILE,"w",encoding="utf-8")
     except:
         print(getexc(),file=sys.stderr)

@@ -27,6 +27,7 @@ class Client:
         self.sk.connect(ip,port)
         self.d=DirTree()
         self._not_pause_mainloop.set()
+        Thread(target=client.mainloop,daemon=True,name="FileTP Mainloop").start()
         initcli()
     def close(self):
         try:
@@ -127,9 +128,11 @@ class Client:
             time.sleep(0.01)
         self.sk.stat["stat"]=STAT_WAIT
         self._sending.set()
+        self._accept_recv.set()
         Thread(target=_FileTPDaemon,daemon=True,name="FileTP Daemon").start()
         self.sk.sends(self.d)
         self._sending.clear()
+        self._accept_recv.clear()
         self.resumemainloop()
     def setdirtree(self,d:DirTree):
         self.d=d
@@ -181,6 +184,7 @@ class Server:
             pass
         client.sk=csk
         initcli()
+        Thread(target=client.mainloop,daemon=True,name="FileTP Mainloop").start()
         #client.sk.sk.settimeout(None)
         self.close()
 server=Server()

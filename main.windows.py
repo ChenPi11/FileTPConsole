@@ -141,7 +141,6 @@ class ClientCmd(Cmd):
         im.close()
     def do_test(self,arg):
         print("do_test() called                 [  OK  ]")
-        self.c.sk.recvs("build")
         
     log=getLogger("CMD")
     prompt = strings.app.pro
@@ -395,7 +394,7 @@ class ClientCmd(Cmd):
             if(_connected(self.c)):
                 print(strings.app.messages.connected)
                 return
-            addr=parse_addr(ip)
+            addr=parse_addr(arg)
             if(not len(arg.strip())):
                 addr[0]=""
             self._make_qrcode(addr)
@@ -404,7 +403,7 @@ class ClientCmd(Cmd):
             print(strings.app.messages.wait_conn % (addr[0]+":"+str(addr[1])))
             server.accept()
             print(strings.app.messages.after_conn % (self.c.sk.addr[0]+":"+str(self.c.sk.addr[1])))
-            Thread(target=client.mainloop,daemon=True,name="FileTP Mainloop").start()
+            
             server.close()
         except:
             Log.printerror()
@@ -415,6 +414,17 @@ class ClientCmd(Cmd):
             time.sleep(0.05)
         while(client._accept_recv.is_set()):
             time.sleep(0.05)
+    def do_send(self,arg):
+        if(_connected(client)):
+            try:
+                client.setdirtree(self.d)
+                print(strings.app.messages.wait_accept)
+                client.sendfiles()
+            except:
+                log.printerror()
+                printcolor(colors["red"],getexc())
+        else:
+            print(strings.app.messages.unconnect)
     def do_close(self,arg):
         try:
             if(not _connected(self.c)):
